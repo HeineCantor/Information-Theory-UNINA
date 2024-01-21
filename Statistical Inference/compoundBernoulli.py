@@ -8,6 +8,8 @@ SIMULATION_STARTING = 1
 SIMULATION_STEP = 1
 SIMULATION_UPDATE = 100
 
+ERROR_ROUNDING = 6
+
 numberOfObservations = SIMULATION_STARTING
 axisX, axisYMMSE, axisYMAP = [], [], []
 
@@ -44,11 +46,11 @@ def update(frame):
 def printErrors():
     global betaParameter
 
-    systematicMMSE = round(abs(sum(axisYMMSE)/len(axisYMMSE) - betaParameter), 5)
-    systematicMAP = round(abs(sum(axisYMAP)/len(axisYMAP) - betaParameter), 5)
+    systematicMMSE = round(abs(sum(axisYMMSE)/len(axisYMMSE) - betaParameter), ERROR_ROUNDING)
+    systematicMAP = round(abs(sum(axisYMAP)/len(axisYMAP) - betaParameter), ERROR_ROUNDING)
 
-    casualMMSE = round(abs(sum(axisYMMSE)/len(axisYMMSE) - betaParameter)**2, 5)
-    casualMAP = round(abs(sum(axisYMAP)/len(axisYMAP) - betaParameter)**2, 5)
+    casualMMSE = round(abs(sum(axisYMMSE)/len(axisYMMSE) - betaParameter)**2, ERROR_ROUNDING)
+    casualMAP = round(abs(sum(axisYMAP)/len(axisYMAP) - betaParameter)**2, ERROR_ROUNDING)
 
     print(f"SYSTEMATIC: e(MMSE)={systematicMMSE} | e(MAP)={systematicMAP} ||| MSE: e^2(MMSE)={casualMMSE} | e^2(MAP)={casualMAP} ")
 
