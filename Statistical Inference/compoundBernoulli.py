@@ -1,6 +1,4 @@
 from numpy.random import binomial
-from asyncio import sleep
-from datetime import datetime
 from matplotlib import pyplot
 from matplotlib.animation import FuncAnimation
 
