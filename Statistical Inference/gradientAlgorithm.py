@@ -89,8 +89,6 @@ def update(frame):
     figure.gca().relim()
     figure.gca().autoscale_view()
 
-    print(a_next)
-
     return lineMMSE
 
 a_0 = np.asarray([[1, 1]])
