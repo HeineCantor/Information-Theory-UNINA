@@ -101,7 +101,9 @@ eigenValues = np.linalg.eigvals(observationCorrelation)
 
 print(f"\nMAXIMAL VALUE FOR γ: {2/eigenValues.max()}")
 
-animation = FuncAnimation(figure, update, interval=100)
+animation = FuncAnimation(figure, update, interval=100, cache_frame_data=False)
 pyplot.axhline(y=0, color='g', linestyle='-')
 pyplot.legend()
 pyplot.show()
+
+print(a_previous)
