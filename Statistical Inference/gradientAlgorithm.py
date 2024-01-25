@@ -50,9 +50,9 @@ print("==============================")
 
 # Gradient Algorithm Parameters
 
-INIT_A_VALUE = [1, 1]
+INIT_A_VALUE = np.random.uniform(-1.0, 1.0, 2)
 
-a_previous = np.asarray([INIT_A_VALUE])
+a_0 = a_previous = np.asarray([INIT_A_VALUE])
 
 GAMMA = 0.1
 
@@ -91,7 +91,6 @@ def update(frame):
 
     return lineMMSE
 
-a_0 = np.asarray([[1, 1]])
 a_previous = a_0
 a_next = a_0
 
